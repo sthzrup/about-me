@@ -1,0 +1,291 @@
+/*Headers*/
+h1 {
+    font-size: 40px !important;
+    color: rgb(100, 25, 25);
+}
+
+h2 {
+    font-size: 30px;
+    color: rgb(105, 17, 36);
+}
+
+h3{
+    font-size: 20px;
+}
+
+/*Body*/
+body {
+    background-color: lightgoldenrodyellow;
+}
+
+p {
+    font-size: 16px;
+}
+
+.title {
+    background-color: lightgray;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    color: brown;
+    text-align: center;
+}
+
+/*Container for entire Screen*/
+.container {
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "menu content"
+    "footer footer";
+    grid-template-columns: 1fr 5fr;
+    max-width: 100%;
+    gap: 5px;
+    padding: 5px;   
+}
+
+.container > div {
+    padding: 10px;
+}
+
+.container > div.header {
+    grid-area: header;
+}
+
+.container > div.menu {
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 50vh;
+    width: 200px;
+    min-width: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.container > div.content {
+    grid-area: content;
+    width: auto;
+}
+
+.container > div.footer {
+    grid-area: footer;
+    text-align: center;
+}
+
+/*Screen line*/
+.line {
+    border-top: 5px solid black;
+}
+
+/*Images and gifs*/
+.img-logo {
+    height: 250px;
+    display: block;
+    margin: auto;
+}
+
+.img-me {
+    height: 300px;
+}
+
+.img-hobbies {
+    float: right;
+    height: 150px;
+    width: auto;
+}
+
+/*iframe video*/
+.iframe-video{
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border: none;
+}
+
+/*Container for class*/
+.container-class {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    grid-gap: 25px;
+    padding: 25px;
+    width: auto;
+    height: auto;
+    max-width: 1300px;
+    background-color: rgb(96, 189, 104);
+}
+
+.box-class {
+    grid-column: span 2;
+    text-align: center;
+    background-color: rgb(239, 184, 101);
+}
+
+/* Makes single column grid for small screen*/
+@media screen and (max-width: 600px) {
+    .container-class {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-gap: 10px;
+        padding: 15px;
+    }
+
+    /* Ensure it fits within a single column for heading of my grid*/
+    .box-class {
+        grid-column: span 1;
+    }
+}
+
+/*Grid sizing*/
+.grid-class {
+    padding: 15px;
+    border: 5px solid #243547;
+    text-align: center;
+    background-color: rgba(169, 195, 242, 0.7);
+}
+
+/*Enlarge when hover to the grid*/
+.grid-class:hover {
+    background-color: rgba(99, 150, 243, 0.7);
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+/*Container for hobbies*/
+.container-hobbies {
+    display: grid;
+    grid-gap: 25px;
+    padding: 25px;
+    width: auto;
+    margin: auto;
+}
+
+/*Grid sizing*/
+.grid-hobbies {
+    padding: 3px;
+    border: 5px;
+    text-align: left;
+    width: 200px;
+}
+
+/*Enlarge when hovering*/
+.grid-hobbies:hover {
+    background-color: rgb(240, 240, 134);
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+/*Input gifs -> adjusting its size*/
+.hover-img {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    width: 150px;
+    height: auto;
+    border: 2px solid rgb(0, 0, 0);
+    background: #fff;
+    z-index: 10;
+}
+
+/*Shows the gifs when hovering*/
+.grid-hobbies:hover .hover-img {
+    display: block;
+}
+
+/*Container for Basic Calculations*/
+.container-calc {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    grid-gap: 25px;
+    padding: 25px;
+    width: auto;
+    height: auto;
+    max-width: 1300px;
+    background-color: rgb(234, 181, 65);
+}
+
+/*Grid sizing*/
+.grid-calc {
+    padding: 15px;
+    border: 5px solid #01452a;
+    text-align: left;
+    background-color: #9ae7cf;
+}
+
+.grid-span {
+    grid-column: span 2;
+}
+
+/* Makes single column grid for small screen*/
+@media screen and (max-width: 600px) {
+    .container-calc {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-gap: 10px;
+        padding: 15px;
+    }
+
+    /* Ensure it fits within a single column in the grid*/
+    .grid-span {
+        grid-column: span 1;
+    }
+}
+
+/*Enlarge when hover to the grid*/
+.grid-calc:hover {
+    background-color: #22c9d5;
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+/*For button*/
+button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgb(172, 50, 6);
+    color: white;
+    cursor: pointer;
+}
+
+button[type="reset"] {
+    background-color: red;
+}
+
+button[type="submit"] {
+    background-color: blue;
+}
+
+button:hover {
+    background-color: darkred;
+}
+
+#resultArithmetic {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#resultFactorial {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#resultFibonacci {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#resultMinmax {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#mailingListOutput {
+    margin-top: 20px;
+}
